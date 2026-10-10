@@ -1,0 +1,152 @@
+/*
+ * PORTFOLIO THEME
+ * Start here when customising the design. These variables apply to every page.
+ * Keep colour combinations readable; check contrast after changing them.
+ */
+:root {
+  --color-background: #fffcf6;
+  --color-surface: #fffefa;
+  --color-text: #54483f;
+  --color-muted: #73675e;
+  --color-accent: #42779c;
+  --color-accent-soft: #edf4fa;
+  --color-highlight: #f8e9ec;
+  --color-border: #e9dcda;
+  /* EDIT: pastel colours are for decoration; darker accent colours keep links readable. */
+  --color-pink: #e8adc0;
+  --color-lilac: #b7acd6;
+  --color-blue: #a8d2e6;
+  --color-yellow: #edcf77;
+  --color-green: #b2ce98;
+  --color-heading: #467da4;
+  --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-heading: "Trebuchet MS", "Segoe UI", sans-serif;
+  --width-page: 1120px;
+  --width-reading: 720px;
+  --space-section: clamp(3rem, 7vw, 6rem);
+  --radius: 20px;
+}
+
+/* BASE: shared typography and predictable sizing. */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-background); color: var(--color-text); font-family: var(--font-body); line-height: 1.75; }
+a { color: var(--color-accent); text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 5px; }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; line-height: 1.25; color: var(--color-heading); }
+h1 { font-size: clamp(2.3rem, 5vw, 3.7rem); margin: .5rem 0 1.25rem; letter-spacing: -.025em; }
+h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin: 0 0 1.25rem; }
+h3 { font-size: 1.5rem; margin: 0 0 .7rem; }
+p { margin: 0 0 1.2rem; }
+img { display: block; max-width: 100%; height: auto; }
+ul, ol { padding-left: 1.4rem; }
+li + li { margin-top: .5rem; }
+.container { width: min(var(--width-page), calc(100% - 3rem)); margin-inline: auto; }
+.reading { max-width: var(--width-reading); }
+.eyebrow { color: var(--color-accent); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.lead { font-size: 1.15rem; color: var(--color-muted); max-width: 660px; }
+.muted { color: var(--color-muted); }
+.button { display: inline-block; padding: .75rem 1.3rem; border: 1px solid var(--color-border); border-radius: 100px; background: var(--color-accent-soft); color: var(--color-accent); text-decoration: none; font-weight: 600; }
+.button:hover { filter: brightness(.9); }
+.button-secondary { background: var(--color-highlight); color: var(--color-text); }
+.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
+
+/* NAVIGATION: repeated in each HTML file; update all copies when adding a page. */
+.skip-link { position: absolute; left: 1rem; top: -10rem; z-index: 10; padding: .6rem 1rem; background: var(--color-surface); }
+.skip-link:focus { top: 1rem; }
+.site-header { border-bottom: 1px solid var(--color-border); background: var(--color-background); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-block: 1.25rem; }
+.brand { color: var(--color-text); font-family: var(--font-body); font-weight: 400; font-size: 1.2rem; text-decoration: none; }
+.site-nav { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; }
+.site-nav a { color: var(--color-muted); font-size: .9rem; text-decoration: none; padding-block: .25rem; }
+.site-nav a[aria-current="page"] { color: var(--color-accent); border-bottom: 2px solid var(--color-accent); }
+.template-notice { padding: .65rem 1.5rem; background: var(--color-accent-soft); text-align: center; font-size: .8rem; color: var(--color-accent); }
+
+/* PAGE LAYOUT: use section for spacing and soft-section for a tinted background. */
+.section { padding-block: var(--space-section); }
+.soft-section { background: var(--color-highlight); }
+.page-heading { padding-block: 3.5rem; background: var(--color-highlight); }
+.page-heading h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+.breadcrumb { font-size: .85rem; margin-bottom: 1.5rem; }
+.hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: center; }
+/* HOMEPAGE: decorative lettering stays editable HTML, with no image or font dependency. */
+.portfolio-banner { display: flex; justify-content: center; gap: clamp(.25rem, 1.6vw, 1.4rem); padding-bottom: 3rem; font-family: var(--font-heading); font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 800; line-height: 1.2; }
+.portfolio-banner span { color: var(--color-pink); transform: rotate(-7deg); }
+.portfolio-banner span:nth-child(3n + 2) { color: var(--color-lilac); transform: rotate(5deg); }
+.portfolio-banner span:nth-child(3n) { color: var(--color-blue); transform: rotate(-3deg); }
+.portfolio-banner span:nth-child(4) { color: var(--color-pink); transform: rotate(6deg); }
+.portfolio-banner span:nth-child(7) { color: var(--color-yellow); }
+.portfolio-banner span:nth-child(8) { color: var(--color-green); }
+.hero-grid h1 { color: var(--color-text); }
+/* EDIT: this pink frame can also wrap a real portrait; see the maintenance guide. */
+.portrait-placeholder { position: relative; aspect-ratio: 4 / 5; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; text-align: center; background: var(--color-surface); border: 18px solid var(--color-highlight); border-bottom-width: 45px; border-radius: 3px; transform: rotate(3deg); width: 88%; margin-inline: auto; }
+.portrait-placeholder::before { content: ""; position: absolute; top: -30px; left: calc(50% - 40px); width: 80px; height: 26px; background: var(--color-yellow); opacity: .55; transform: rotate(-8deg); }
+.portrait-initials { font-family: var(--font-heading); font-size: 5rem; color: var(--color-accent); line-height: 1.3; }
+.portrait-placeholder p { max-width: 220px; color: var(--color-muted); font-size: .9rem; }
+.two-column { display: grid; grid-template-columns: 1fr 1.7fr; gap: 4rem; }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2rem; }
+.card { padding: 1.8rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); }
+.card:nth-child(1) { border-top: 5px solid var(--color-blue); }
+.card:nth-child(2) { border-top: 5px solid var(--color-pink); }
+.card:nth-child(3) { border-top: 5px solid var(--color-lilac); }
+.card p { color: var(--color-muted); }
+.card-number { font-size: .8rem; color: var(--color-accent); margin-bottom: 1.5rem; }
+.card a { font-weight: 600; }
+.contact-box { padding: 2rem; border-left: 3px solid var(--color-pink); border-radius: var(--radius); background: var(--color-surface); }
+.contact-box p:last-child { margin-bottom: 0; }
+
+/* EVIDENCE: shared blocks for narrative, files, captions, and standards. */
+.evidence-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 3.5rem; }
+.section-menu { align-self: start; padding: 1.5rem; background: var(--color-accent-soft); border-radius: var(--radius); }
+.section-menu p { font-size: .8rem; font-weight: 700; }
+.section-menu ul { list-style: none; padding: 0; margin: 0; }
+.section-menu a { font-size: .9rem; }
+.evidence-section + .evidence-section { margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--color-border); }
+.evidence-section { scroll-margin-top: 2rem; }
+.evidence-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 0; }
+.tag { padding: .25rem .7rem; border: 1px solid var(--color-border); border-radius: 100px; font-size: .8rem; background: var(--color-background); }
+.document { margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); }
+.document-placeholder { padding: 2.5rem 1rem; background: var(--color-background); border: 1px dashed var(--color-border); text-align: center; color: var(--color-muted); }
+.document figcaption { margin-top: 1rem; font-size: .9rem; }
+.document-status { font-size: .8rem; font-weight: 600; color: var(--color-muted); margin: 1rem 0 0; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { padding: .85rem; border-bottom: 1px solid var(--color-border); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+th { background: var(--color-accent-soft); }
+.table-scroll { overflow-x: auto; }
+details { border-bottom: 1px solid var(--color-border); padding: 1rem 0; }
+summary { cursor: pointer; font-weight: 600; color: var(--color-accent); }
+details p { margin: 1rem 0 0; }
+.page-links { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; }
+
+/* FOOTER: plain contact and navigation, no third-party services required. */
+.site-footer { border-top: 1px solid var(--color-border); padding-block: 2rem; color: var(--color-muted); font-size: .85rem; }
+.footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.site-footer p { margin: 0; }
+
+/* SMALL SCREENS: navigation stays visible; columns become a single reading flow. */
+@media (max-width: 760px) {
+  .container { width: calc(100% - 2rem); }
+  .header-inner { align-items: flex-start; flex-direction: column; gap: .65rem; }
+  .site-nav { gap: .4rem 1.1rem; }
+  .hero-grid, .two-column, .evidence-layout, .card-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .portrait-placeholder { width: min(88%, 350px); margin-inline: auto; }
+  .portfolio-banner { padding-bottom: 2rem; }
+  .section-menu ul { display: flex; flex-wrap: wrap; gap: .6rem 1rem; }
+  .section-menu li + li { margin: 0; }
+  .page-heading { padding-block: 2.5rem; }
+}
+
+/* PRINT: keep evidence readable and remove navigation that has no paper use. */
+@media print {
+  body { background: white; color: black; font-size: 11pt; }
+  .site-header, .site-footer, .template-notice, .section-menu, .page-links, .skip-link { display: none; }
+  .container { width: 100%; }
+  .section, .page-heading { padding-block: 1rem; }
+  .evidence-layout, .hero-grid, .two-column, .card-grid { display: block; }
+  h1 { font-size: 28pt; }
+  h2 { font-size: 20pt; }
+  h1, h2, h3 { color: black; }
+  .portrait-placeholder { transform: none; }
+  .portfolio-banner { display: none; }
+}
+

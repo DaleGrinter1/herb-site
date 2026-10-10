@@ -1,0 +1,6 @@
+# Local browser inspection artifacts and machine-generated files.
+.playwright-cli/
+output/
+.DS_Store
+Thumbs.db
+
