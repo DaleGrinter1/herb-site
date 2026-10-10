@@ -19,6 +19,8 @@
   --color-yellow: #edcf77;
   --color-green: #b2ce98;
   --color-heading: #467da4;
+  /* EDIT: one dark blue for the straight PORTFOLIO lettering. */
+  --color-portfolio: #285577;
   --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
   --font-heading: "Trebuchet MS", "Segoe UI", sans-serif;
   --width-page: 1120px;
@@ -71,12 +73,7 @@ li + li { margin-top: .5rem; }
 .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: center; }
 /* HOMEPAGE: decorative lettering stays editable HTML, with no image or font dependency. */
 .portfolio-banner { display: flex; justify-content: center; gap: clamp(.25rem, 1.6vw, 1.4rem); padding-bottom: 3rem; font-family: var(--font-heading); font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 800; line-height: 1.2; }
-.portfolio-banner span { color: var(--color-pink); transform: rotate(-7deg); }
-.portfolio-banner span:nth-child(3n + 2) { color: var(--color-lilac); transform: rotate(5deg); }
-.portfolio-banner span:nth-child(3n) { color: var(--color-blue); transform: rotate(-3deg); }
-.portfolio-banner span:nth-child(4) { color: var(--color-pink); transform: rotate(6deg); }
-.portfolio-banner span:nth-child(7) { color: var(--color-yellow); }
-.portfolio-banner span:nth-child(8) { color: var(--color-green); }
+.portfolio-banner span { color: var(--color-portfolio); }
 .hero-grid h1 { color: var(--color-text); }
 /* EDIT: this pink frame can also wrap a real portrait; see the maintenance guide. */
 .portrait-placeholder { position: relative; aspect-ratio: 4 / 5; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; text-align: center; background: var(--color-surface); border: 18px solid var(--color-highlight); border-bottom-width: 45px; border-radius: 3px; transform: rotate(3deg); width: 88%; margin-inline: auto; }
@@ -150,3 +147,16 @@ details p { margin: 1rem 0 0; }
   .portfolio-banner { display: none; }
 }
 
+
+/* SUPPLIED ASSETS: preserve the photo proportions and keep source excerpts readable. */
+.portrait-frame { padding: 0; }
+.portrait-frame img { width: 100%; }
+.evidence-section h3 { margin-top: 1.75rem; font-size: 1.2rem; }
+.evidence-image { max-height: 650px; width: auto; margin: 1.5rem auto .75rem; object-fit: contain; }
+.image-caption, .source-label { font-size: .9rem; color: var(--color-muted); }
+.source-excerpts { overflow-wrap: anywhere; }
+.source-excerpts table p { margin-bottom: .5rem; }
+.source-excerpts td { min-width: 130px; }
+/* Allow wide source tables to scroll within the mobile content column. */
+.evidence-layout > div { min-width: 0; }
+.evidence-meta .tag { overflow-wrap: anywhere; }

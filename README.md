@@ -3,9 +3,10 @@
 A small static portfolio inspired by the reference site's structure. All pages
 share `styles.css`. There is no JavaScript, framework, package installation, or build step.
 
-The portfolio uses writing prompts and placeholders. It does not contain the
-reference owner's biography, documents, or images. Teaching domains and APST
-labels are starting assumptions; confirm them before completing the content.
+The evidence pages use the three supplied Evidence Set documents, including their
+reflections, source excerpts, tables and embedded images. The homepage uses the
+supplied headshot. The supplied Introduction document provides the biography, teaching values and
+contact details; the display name is Herb Zhou as confirmed by the owner.
 
 ## Files
 
@@ -21,6 +22,21 @@ labels are starting assumptions; confirm them before completing the content.
 | `styles.css` | Shared design settings and layout |
 | `assets/images/` | Portraits and other images |
 | `assets/documents/` | Evidence documents |
+
+## Free hosting with GitHub Pages
+
+This project is connected to https://github.com/DaleGrinter1/herb-site.
+GitHub Pages can publish the static site from the public repository for free.
+The `.nojekyll` file tells GitHub to serve the HTML and assets directly.
+
+After committing and pushing the website files, open the repository's Settings
+and select Pages. Under Build and deployment, choose Deploy from a branch,
+select `main` and `/ (root)`, then Save. The expected site address is
+https://dalegrinter1.github.io/herb-site/.
+
+For later updates, commit and push the changed website files to `main`.
+Keep local source documents out of the publishing commit unless they are intended
+for public access; the site's download documents are in `assets/documents/`.
 
 ## Preview locally
 
@@ -40,8 +56,8 @@ Open `styles.css` and edit the variables in `:root` at the top.
 Colours, fonts, content widths, section spacing, and corner radius are shared by all pages.
 For example, change `--color-accent` to change the main blue link colour.
 The pink, lilac, blue, yellow, and green variables control decorative pastel accents.
-The homepage lettering is editable HTML; its colours and angles are in the
-`HOMEPAGE` section of the stylesheet. Remove the `portfolio-banner` div if unwanted.
+The homepage lettering is editable HTML; change `--color-portfolio` for its dark
+blue colour. The letters sit straight. Remove the `portfolio-banner` div if unwanted.
 Save the file and refresh the browser.
 
 Keep text/background combinations readable. The heading font uses fonts already
@@ -163,3 +179,22 @@ Keep the source in version control and give another maintainer access. Save the
 previous working version before making changes. Keep this guide current so the
 next person can follow the same process.
 
+
+## Supplied evidence and portrait
+
+The homepage headshot is `assets/images/herbFace.jpg`. Each evidence page contains
+the wording from its matching `evidence/Evidence Set N.docx` source. Download copies
+live in `assets/documents/evidence-set-N.docx`; extracted images live in
+`assets/images/evidence-set-N/`. Source excerpts are expandable for easier reading.
+
+When revising evidence, update the page text and its download copy together.
+The standards labels on the homepage and evidence overview match the supplied
+artefacts. The original files in `evidence/` are retained unchanged.
+
+## Introduction content
+
+About Me and the learning journey use `assets/documents/Introduction.docx`.
+The philosophy page summarises the values described in that introduction.
+Herb Zhou is the confirmed display name; the introduction?s opening name was
+updated accordingly. Contact links use the two supplied email addresses and phone
+number. The student ID is retained in the original document.
